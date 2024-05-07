@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Create env file
         run: echo "${{ secrets.TWITTER_ENV_DEVELOPMENT }}" > .env.development
       - name: build docker image
@@ -33,7 +33,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
-            docker pull danmt99/twitter:v2
+            docker pull danmt99/twitter-api:v2
             docker stop twitter-api
             docker rm twitter-api
-            docker run -dp 3000:3000 --name twitter-api --restart unless-stopped -v ~/twitter-api/uploads:/app/uploads danmt99/twitter:v2
+            docker run -dp 4000:4000 --name twitter-api --restart unless-stopped -v ~/twitter-api/uploads:/app/uploads danmt99/twitter-api:v2
