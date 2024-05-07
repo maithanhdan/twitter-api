@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   twitter-api:
-    image: danmt/twitter:v0
+    image: danmt99/twitter-api:v3
     ports:
       - "4000:4000"
     volumes:
