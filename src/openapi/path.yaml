@@ -53,7 +53,7 @@ paths:
                     type: string
                     example: Login success
                   result:
-                    $ref: "#components/schemas/SuccessLogin"
+                    $ref: "#components/schemas/LoginSuccess"
         "400":
           description: Bad request
         "404":

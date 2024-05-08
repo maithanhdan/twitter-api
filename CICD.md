@@ -143,3 +143,6 @@ systemctl status pm2-$USER
 ```
 cd twitter-api && git pull && yarn build && pm2 restart twitter-api
 ```
+
+### Connect to vps
+ssh -i ~/.ssh/danmt danmt_dev@45.77.169.15
