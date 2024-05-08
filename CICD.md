@@ -119,3 +119,27 @@ Fix lỗi trên ubuntu server
 ```bash
 ssh -i ~/.ssh/id_duthanhduoc duoc@207.148.118.147
 ```
+
+
+### Run pm2
+
+```
+yarn build
+=>
+pm2 start --name=twitter-api yarn -- start:dev
+=>
+pm2 ls
+=>
+pm2 save
+=>
+pm2 startup
+=>
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp /home/$USER
+=>
+systemctl status pm2-$USER
+```
+
+### Rebuild pm2
+```
+cd twitter-api && git pull && yarn build && pm2 restart twitter-api
+```
